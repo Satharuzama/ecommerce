@@ -4,7 +4,7 @@ import { HomePage } from "./pages/home/HomePage";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
 import { OrdersPage } from "./pages/orders/OrdersPage";
 import { TrackingPage } from "./pages/TrackingPage";
-import { NotFoundPage } from "./pages/NotFoundpage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import { getCart } from "./utils/localStore";
 import "./App.css";
 
