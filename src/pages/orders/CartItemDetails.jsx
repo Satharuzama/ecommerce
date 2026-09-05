@@ -43,7 +43,6 @@ export function CartItemDetails({ cartItem, loadCart }) {
         <div className="product-price">
           {formatMoney(cartItem.product.priceCents)}
         </div>
-        s
         <div className="product-quantity">
           <span>
             Quantity:{" "}
@@ -65,12 +64,14 @@ export function CartItemDetails({ cartItem, loadCart }) {
           >
             Update
           </span>
-          <span
-            className="delete-quantity-link link-primary"
+          <button
+            type="button"
+            className="delete-cart-button"
+            aria-label={`Remove ${cartItem.product.name} from cart`}
             onClick={deleteCartItem}
           >
             Delete
-          </span>
+          </button>
         </div>
       </div>
     </>

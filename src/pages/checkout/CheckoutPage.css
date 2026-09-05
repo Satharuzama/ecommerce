@@ -119,6 +119,20 @@
   margin-left: 3px;
 }
 
+.checkout-page .delete-cart-button {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border: 1px solid #d9534f;
+  border-radius: 3px;
+  background: white;
+  color: #c9302c;
+  cursor: pointer;
+}
+
+.checkout-page .delete-cart-button:hover {
+  background: #fff1f0;
+}
+
 @media (max-width: 1000px) {
   .checkout-page .delivery-options {
     /* grid-column: 1 means this element will be placed
