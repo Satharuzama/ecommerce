@@ -34,7 +34,7 @@ export function TrackingPage({ cart }) {
  const isDelivered = deliveryPercent ===100;
   return (
     <>
-      <link rel="icon" type="image/svg+xml" to="tracking-favicon.png" />
+      <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}tracking-favicon.png`} />
       <Header cart={cart} />
 
       <div className="tracking-page">

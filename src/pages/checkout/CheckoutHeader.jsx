@@ -11,7 +11,7 @@ export function CheckoutHeader( {cart}  ) {
   })
   return (
     <>
-      <link rel="icon" type="image/svg+xml" href="cart-favicon.png" />
+      <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}cart-favicon.png`} />
       <div className="checkout-header">
         <div className="header-content">
           <div className="checkout-header-left-section">

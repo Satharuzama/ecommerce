@@ -5,7 +5,7 @@ export function NotFoundPage({cart}){
         <>   
          <Header cart={cart}/>
          <title>404 page not found</title>
-          <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
+          <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}home-favicon.png`} />
          <p className='not-found'>
      Page not found
         </p>

@@ -13,7 +13,7 @@ export function OrdersPage({ cart , loadCart }) {
     <>
       <title>Orders</title>
       <Header cart={cart} />
-      <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
+      <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}orders-favicon.png`} />
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
         <OrdersGrid orders={orders} loadCart={loadCart} />
