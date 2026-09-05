@@ -228,3 +228,29 @@
 .quantity-textbox {
   width: 50px;
 }
+
+@media (max-width: 575px) {
+  .checkout-page {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 92px;
+  }
+
+  .checkout-page .cart-item-container,
+  .checkout-page .payment-summary {
+    padding: 14px;
+  }
+
+  .checkout-page .cart-item-details-grid {
+    grid-template-columns: 76px 1fr;
+    column-gap: 12px;
+  }
+
+  .checkout-page .product-image {
+    max-height: 90px;
+  }
+
+  .checkout-page .delete-cart-button {
+    margin-left: 4px;
+  }
+}

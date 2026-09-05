@@ -151,3 +151,40 @@
 .orders-link:active{
   text-decoration: underline;
 }
+
+@media (max-width: 575px) {
+  .header {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .header .middle-section {
+    min-width: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .header .right-section {
+    width: auto;
+  }
+
+  .header .orders-link,
+  .header .cart-link {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .header .orders-text,
+  .header .cart-text {
+    display: none;
+  }
+
+  .header .cart-icon {
+    width: 34px;
+  }
+
+  .header .cart-quantity {
+    top: 7px;
+    right: 27px;
+  }
+}
