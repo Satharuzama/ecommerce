@@ -1,24 +1,20 @@
 import { formatMoney } from "../../utils/money";
 import CheckmarkIcon from "../../assets/images/icons/checkmark.png";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { addToCart as addProductToCart } from "../../utils/localStore";
 
 export function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
   const [showAddedMessage, setShowAddedMessage] = useState(false);
-  const addedMessageTimer = useRef(null);
   const addToCart = async () => {
     addProductToCart(product.id, quantity);
     loadCart();
     setShowAddedMessage(true);
 
-    clearTimeout(addedMessageTimer.current);
-    addedMessageTimer.current = setTimeout(() => {
+    setTimeout(() => {
       setShowAddedMessage(false);
     }, 2000);
   };
-
-  useEffect(() => () => clearTimeout(addedMessageTimer.current), []);
   const selectQuantity = (event) => {
     const quantitySelected = Number(event.target.value);
     setQuantity(quantitySelected);
