@@ -184,7 +184,13 @@
   }
 
   .header .cart-quantity {
-    top: 7px;
-    right: 27px;
+    top: 1px;
+    right: 14px;
+    z-index: 1;
+    width: auto;
+    min-width: 18px;
+    padding: 1px 4px;
+    border-radius: 10px;
+    background-color: rgb(186, 255, 190);
   }
 }
