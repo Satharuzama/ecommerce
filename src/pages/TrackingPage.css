@@ -29,8 +29,12 @@
 }
 
 .tracking-page .product-image {
+  display: block;
+  width: 150px;
+  height: 150px;
   max-width: 150px;
   max-height: 150px;
+  object-fit: contain;
   margin-top: 25px;
   margin-bottom: 50px;
 }

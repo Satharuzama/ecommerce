@@ -79,6 +79,11 @@ export function TrackingPage({ cart }) {
           <img
             className="product-image"
             src={`${import.meta.env.BASE_URL}${orderProduct.product.image}`}
+            alt={orderProduct.product.name}
+            width="150"
+            height="150"
+            loading="eager"
+            decoding="async"
           />
 
           <div className="progress-labels-container">
