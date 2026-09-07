@@ -76,7 +76,10 @@ export function TrackingPage({ cart }) {
 
           <div className="product-info">Quantity: {orderProduct.quantity}</div>
 
-          <img className="product-image" src={orderProduct.product.image} />
+          <img
+            className="product-image"
+            src={`${import.meta.env.BASE_URL}${orderProduct.product.image}`}
+          />
 
           <div className="progress-labels-container">
             <div className={`progress-label ${preparingComplete ? "completed-status" : ""} ${isPreparing ? "current-status" : ""}`}>Preparing</div>
