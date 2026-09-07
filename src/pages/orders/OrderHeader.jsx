@@ -17,7 +17,7 @@ export function OrderHeader( {order} ){
         
                           <div className="order-header-right-section">
                             <div className="order-header-label">Order ID:</div>
-                            <div>{order.products.productId}</div>
+                            <div>{order.id}</div>
                           </div>
                         </div>
     );

@@ -43,8 +43,12 @@
   margin-bottom: 15px;
 }
 
-.tracking-page .current-status {
+.tracking-page .completed-status {
   color: rgb(25, 135, 84);
+}
+
+.tracking-page .current-status {
+  font-weight: 700;
 }
 
 @media (max-width: 575px) {
@@ -75,7 +79,19 @@
 
 .tracking-page .progress-bar {
   height: 100%;
+  min-width: 4px;
   background-color: rgb(25, 135, 84);
   border-radius: 50px;
   width: 50%;
+  animation: tracking-progress-demo 4s linear forwards;
+}
+
+@keyframes tracking-progress-demo {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }

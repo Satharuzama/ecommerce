@@ -68,8 +68,20 @@ export function getPaymentSummary() {
 
 export function createOrder() {
   const cart = getCartItems();
+  const totalCostCents = getPaymentSummary().totalCostCents;
   const orderTimeMs = Date.now();
-  const order = { id: `local-${orderTimeMs}`, orderTimeMs, products: cart.map((item) => ({ productId: item.productId, product: item.product, name: item.product.name, quantity: item.quantity, estimatedDeliveryTimeMs: orderTimeMs + 7 * 86400000 })) };
+  const order = {
+    id: `local-${orderTimeMs}`,
+    orderTimeMs,
+    totalCostCents,
+    products: cart.map((item) => ({
+      productId: item.productId,
+      product: item.product,
+      name: item.product.name,
+      quantity: item.quantity,
+      estimatedDeliveryTimeMs: orderTimeMs + 7 * 24 * 60 * 60 * 1000,
+    })),
+  };
   write("ecommerce-local-orders", [order, ...read("ecommerce-local-orders", [])]);
   write("ecommerce-local-cart", []);
   return order;

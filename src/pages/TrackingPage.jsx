@@ -9,9 +9,16 @@ import { getOrder } from "../utils/localStore";
 export function TrackingPage({ cart }) {
   const { orderId, productId } = useParams();
   const [order, setOrder] = useState(null);
+  const [currentTime, setCurrentTime] = useState(() => dayjs().valueOf());
   useEffect(() => {
     setOrder(getOrder(orderId));
   }, [orderId]);
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setCurrentTime(dayjs().valueOf());
+    }, 1000);
+    return () => clearInterval(timerId);
+  }, []);
   if (!order) {
     return null;
   }
@@ -20,18 +27,35 @@ export function TrackingPage({ cart }) {
     return orderProduct.productId === productId;
   });
 
-  const totalDeliveryTimeMs =
-    orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
-  let timePassedMs = dayjs().valueOf() - order.orderTimeMs;
-
-  let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100;
-  if (deliveryPercent > 100) {
-    deliveryPercent = 100;
+  if (!orderProduct) {
+    return (
+      <>
+        <Header cart={cart} />
+        <div className="tracking-page">
+          <div className="order-tracking">
+            <Link className="back-to-orders-link link-primary" to="/orders">
+              View all orders
+            </Link>
+            <div className="product-info">Tracking information not found.</div>
+          </div>
+        </div>
+      </>
+    );
   }
 
- const isPreparing = deliveryPercent < 33 ;
- const isShipped = deliveryPercent >= 33 && deliveryPercent < 100;
- const isDelivered = deliveryPercent ===100;
+  const totalDeliveryTimeMs =
+    orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
+  let timePassedMs = currentTime - order.orderTimeMs;
+
+  let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100;
+  deliveryPercent = Math.max(0, Math.min(100, deliveryPercent));
+
+  const isPreparing = deliveryPercent < 33;
+  const isShipped = deliveryPercent >= 33 && deliveryPercent < 100;
+  const isDelivered = deliveryPercent >= 100;
+  const preparingComplete = deliveryPercent >= 0;
+  const shippedComplete = deliveryPercent >= 33;
+  const deliveredComplete = deliveryPercent >= 100;
   return (
     <>
       <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}tracking-favicon.png`} />
@@ -44,7 +68,7 @@ export function TrackingPage({ cart }) {
           </Link>
 
           <div className="delivery-date">
-            {deliveryPercent >= 100 ? "Deliverd on " : "Arriving on"}
+            {deliveryPercent >= 100 ? "Delivered on " : "Arriving on"}
             {dayjs(orderProduct.estimatedDeliveryTimeMs).format("dddd, MMMM D")}
           </div>
 
@@ -55,9 +79,9 @@ export function TrackingPage({ cart }) {
           <img className="product-image" src={orderProduct.product.image} />
 
           <div className="progress-labels-container">
-            <div className={`progress-label ${isPreparing && 'current-status'}`}>Preparing</div>
-            <div className={`progress-label ${isShipped && 'current-status'}`}>Shipped</div>
-            <div className={`progress-label ${isDelivered && 'current-status'}`}>Delivered</div>
+            <div className={`progress-label ${preparingComplete ? "completed-status" : ""} ${isPreparing ? "current-status" : ""}`}>Preparing</div>
+            <div className={`progress-label ${shippedComplete ? "completed-status" : ""} ${isShipped ? "current-status" : ""}`}>Shipped</div>
+            <div className={`progress-label ${deliveredComplete ? "completed-status" : ""} ${isDelivered ? "current-status" : ""}`}>Delivered</div>
           </div>
 
           <div className="progress-bar-container">
