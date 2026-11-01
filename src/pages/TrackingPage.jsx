@@ -78,7 +78,12 @@ export function TrackingPage({ cart }) {
 
           <img
             className="product-image"
-            src={`${import.meta.env.BASE_URL}${orderProduct.product.image}`}
+            src={
+              orderProduct.product.image.startsWith("http://") ||
+              orderProduct.product.image.startsWith("https://")
+                ? orderProduct.product.image
+                : `${import.meta.env.BASE_URL}${orderProduct.product.image}`
+            }
             alt={orderProduct.product.name}
             width="150"
             height="150"

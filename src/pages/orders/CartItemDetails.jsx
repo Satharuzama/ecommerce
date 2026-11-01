@@ -37,7 +37,7 @@ export function CartItemDetails({ cartItem, loadCart }) {
   };
   return (
     <>
-      <img className="product-image" src={cartItem.product.image} />
+      <img className="product-image" src={cartItem.product.image.startsWith('http://') || cartItem.product.image.startsWith('https://') ? cartItem.product.image : `${import.meta.env.BASE_URL}${cartItem.product.image}`} />
       <div className="cart-item-details">
         <div className="product-name">{cartItem.product.name}</div>
         <div className="product-price">

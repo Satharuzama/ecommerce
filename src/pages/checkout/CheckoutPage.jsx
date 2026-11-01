@@ -20,7 +20,7 @@ export function CheckoutPage({ cart , loadCart }) {
   
   return (
     <>
-      <title>Checkout</title>
+      <title>Checkout | E-Commerce Shop</title>
 
       <CheckoutHeader cart={cart}/>
       <div className="checkout-page">

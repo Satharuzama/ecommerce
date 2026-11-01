@@ -5,6 +5,15 @@ const products = [
   { id: "54e0eccd-8f36-462b-b68a-8182611d9add", image: "images/products/2-slot-toaster-white.jpg", name: "2 Slot Toaster - White", rating: { stars: 5, count: 2197 }, priceCents: 1899, keywords: ["toaster", "kitchen", "appliances"] },
   { id: "3ebe75dc-64d2-4137-8860-1f5a963e534b", image: "images/products/elegant-white-dinner-plate-set.jpg", name: "2 Piece White Dinner Plate Set", rating: { stars: 4, count: 37 }, priceCents: 2067, keywords: ["plates", "kitchen", "dining"] },
   { id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53", image: "images/products/3-piece-cooking-set.jpg", name: "3 Piece Non-Stick, Black Cooking Pot Set", rating: { stars: 4.5, count: 175 }, priceCents: 3499, keywords: ["kitchen", "cookware"] },
+  // New products added below
+  { id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890", image: "https://outgeeked.net/cdn/shop/files/41lArSiD5hL._AC_SL1200.jpg?v=1770754846", name: "Wireless Bluetooth Headphones", rating: { stars: 4.5, count: 312 }, priceCents: 2999, keywords: ["headphones", "audio", "electronics"] },
+  { id: "b2c3d4e5-f6a7-8901-bcde-012345678901", image: "https://img10.hkrtcdn.com/43874/prd_4387319-MuscleBlaze-Stainless-Steel-Water-Bottle-Black-1-L_o.jpg", name: "Stainless Steel Water Bottle 1L", rating: { stars: 4.7, count: 540 }, priceCents: 1450, keywords: ["water bottle", "sports", "accessories"] },
+  { id: "c3d4e5f6-a7b8-9012-cdef-123456789012", image: "https://contents.mediadecathlon.com/p2728848/k%2491de9d8412a48422e8f3e669d036b937/sq/incaltaminte-alergare-pe-asfalt-kiprun-kd500-3-negru-barbati.jpg?f=800x0&format=auto", name: "Men's Running Shoes", rating: { stars: 4.3, count: 218 }, priceCents: 4999, keywords: ["shoes", "running", "footwear"] },
+  { id: "d4e5f6a7-b8c9-0123-defg-123456789013", image: "https://vminnovations.com/cdn/shop/files/418238_01.jpg?v=1748986699&width=1080", name: "Yoga Mat with Carry Strap", rating: { stars: 4.6, count: 97 }, priceCents: 1999, keywords: ["yoga", "fitness", "accessories"] },
+  { id: "e5f6a7b8-c9d0-1234-efgh-123456789014", image: "https://m.media-amazon.com/images/I/51gXC1ja2IL.jpg", name: "LED Desk Lamp with USB Port", rating: { stars: 4.4, count: 164 }, priceCents: 2490, keywords: ["lamp", "desk", "electronics"] },
+  { id: "f6a7b8c9-d0e1-2345-fghi-123456789015", image: "https://www.publicgoods.com/cdn/shop/files/large_mugs.jpg?crop=center&height=1000&v=1779098396&width=1000", name: "Ceramic Coffee Mug Set of 4", rating: { stars: 4.5, count: 201 }, priceCents: 1675, keywords: ["mug", "coffee", "kitchen"] },
+  { id: "a7b8c9d0-e1f2-3456-ghij-123456789016", image: "https://storage.googleapis.com/imagen_producto/Imagenes_VTEX/06780028.jpg", name: "Backpack for Laptop 15.6 inch", rating: { stars: 4.6, count: 428 }, priceCents: 3299, keywords: ["backpack", "laptop", "accessories"] },
+  { id: "b8c9d0e1-f2a3-4567-hijk-123456789017", image: "https://www.taylorusa.com/cdn/shop/files/3817WH_TopDown.jpg?v=1746466739&width=2048", name: "Digital Kitchen Scale", rating: { stars: 4.4, count: 276 }, priceCents: 1299, keywords: ["kitchen", "scale", "appliances"] },
 ];
 
 const deliveryOptions = [

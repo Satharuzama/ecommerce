@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { NavLink, useNavigate, useSearchParams } from "react-router";
-import LogoWhite from "../assets/images/icons/logo-white.png";
-import MobileLogoWhite from "../assets/images/icons/mobile-logo-white.png";
 import CartIcon from "../assets/images/icons/cart-icon.png";
 import SearchIcon from "../assets/images/icons/search-icon.png";
 import "./Header.css";
@@ -32,8 +30,8 @@ export function Header({ cart }) {
     <div className="header">
       <div className="left-section">
         <NavLink to="/" className="header-link">
-          <img className="logo" src={LogoWhite} />
-          <img className="mobile-logo" src={MobileLogoWhite} />
+          <span className="logo-text">E-Commerce Shop</span>
+          <span className="mobile-logo">E-Commerce Shop</span>
         </NavLink>
       </div>
 

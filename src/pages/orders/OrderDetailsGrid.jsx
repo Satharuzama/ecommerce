@@ -16,7 +16,7 @@ export function OrderDetailsGrid({order , loadCart}){
                       <Fragment key={orderProduct.product.id}>
                         {" "}
                         <div className="product-image-container">
-                          <img src={orderProduct.product.image} />
+                          <img src={orderProduct.product.image.startsWith('http://') || orderProduct.product.image.startsWith('https://') ? orderProduct.product.image : `${import.meta.env.BASE_URL}${orderProduct.product.image}`} />
                         </div>
                         <div className="product-details">
                           <div className="product-name">

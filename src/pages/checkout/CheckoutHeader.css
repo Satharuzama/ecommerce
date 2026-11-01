@@ -31,6 +31,13 @@
   margin-top: 0px;
 }
 
+.checkout-header .checkout-header-logo {
+  color: rgb(30, 30, 30);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+}
+
 .checkout-header .mobile-logo {
   display: none;
 }

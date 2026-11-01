@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(8, 79, 45);
+  background-color: rgb(30, 30, 30);
   color: white;
   padding-left: 15px;
   padding-right: 15px;
@@ -39,8 +39,14 @@
 }
 
 .header .logo {
-  height: 26px;
   margin-top: 1px;
+}
+
+.header .logo-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .header .mobile-logo {
@@ -54,7 +60,6 @@
 
   .header .mobile-logo {
     display: block;
-    height: 26px;
     margin-top: 1px;
   }
 }
@@ -81,7 +86,7 @@
 }
 
 .header .search-button {
-  background-color: rgb(186, 255, 190);
+  background-color: rgb(239, 68, 68);
   border: none;
   width: 45px;
   height: 40px;

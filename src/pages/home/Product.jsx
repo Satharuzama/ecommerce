@@ -25,7 +25,7 @@ export function Product({ product, loadCart }) {
         <img
           className="product-image"
           data-testid="product-image"
-          src={`${import.meta.env.BASE_URL}${product.image}`}
+          src={product.image.startsWith('http://') || product.image.startsWith('https://') ? product.image : `${import.meta.env.BASE_URL}${product.image}`}
         />
       </div>
 
