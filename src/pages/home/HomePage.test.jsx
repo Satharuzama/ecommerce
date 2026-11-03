@@ -32,6 +32,17 @@ describe("Homepage component", () => {
       within(productContainer[1]).getByText("Intermediate Size Basketball"),
     ).toBeInTheDocument();
   });
+  it("renders the header logo text once", () => {
+    const { container } = render(
+      <MemoryRouter>
+        <HomePage cart={[]} loadCart={loadCart} />
+      </MemoryRouter>,
+    );
+
+    expect(
+      within(container.querySelector(".header")).getAllByText("E-Commerce Shop"),
+    ).toHaveLength(1);
+  });
   it("adds a product to the cart", async () => {
     render(
       <MemoryRouter>

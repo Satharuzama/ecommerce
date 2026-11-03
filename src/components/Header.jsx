@@ -31,7 +31,6 @@ export function Header({ cart }) {
       <div className="left-section">
         <NavLink to="/" className="header-link">
           <span className="logo-text">E-Commerce Shop</span>
-          <span className="mobile-logo">E-Commerce Shop</span>
         </NavLink>
       </div>
 

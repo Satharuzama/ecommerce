@@ -39,30 +39,11 @@
   border: 1px solid white;
 }
 
-.header .logo {
-  margin-top: 1px;
-}
-
 .header .logo-text {
   color: #ffffff;
   font-weight: 700;
   font-size: 16px;
   text-decoration: none;
-}
-
-.header .mobile-logo {
-  display: none;
-}
-
-@media (max-width: 675px) {
-  .header .logo {
-    display: none;
-  }
-
-  .header .mobile-logo {
-    display: block;
-    margin-top: 1px;
-  }
 }
 
 .header .middle-section {
