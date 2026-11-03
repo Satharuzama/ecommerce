@@ -170,3 +170,58 @@
   height: 34px;
   margin-top: 1px;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes product-card-entry {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .home-page .product-container {
+    animation: product-card-entry 400ms ease-out both;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .home-page .products-grid > .product-container:nth-child(1) { animation-delay: 0ms; }
+  .home-page .products-grid > .product-container:nth-child(2) { animation-delay: 60ms; }
+  .home-page .products-grid > .product-container:nth-child(3) { animation-delay: 120ms; }
+  .home-page .products-grid > .product-container:nth-child(4) { animation-delay: 180ms; }
+  .home-page .products-grid > .product-container:nth-child(5) { animation-delay: 240ms; }
+  .home-page .products-grid > .product-container:nth-child(6) { animation-delay: 300ms; }
+  .home-page .products-grid > .product-container:nth-child(7) { animation-delay: 360ms; }
+  .home-page .products-grid > .product-container:nth-child(8) { animation-delay: 420ms; }
+  .home-page .products-grid > .product-container:nth-child(9) { animation-delay: 480ms; }
+  .home-page .products-grid > .product-container:nth-child(10) { animation-delay: 540ms; }
+  .home-page .products-grid > .product-container:nth-child(11) { animation-delay: 600ms; }
+  .home-page .products-grid > .product-container:nth-child(12) { animation-delay: 660ms; }
+  .home-page .products-grid > .product-container:nth-child(13) { animation-delay: 720ms; }
+  .home-page .products-grid > .product-container:nth-child(14) { animation-delay: 780ms; }
+  .home-page .products-grid > .product-container:nth-child(15) { animation-delay: 840ms; }
+  .home-page .products-grid > .product-container:nth-child(16) { animation-delay: 900ms; }
+  .home-page .products-grid > .product-container:nth-child(17) { animation-delay: 960ms; }
+  .home-page .products-grid > .product-container:nth-child(18) { animation-delay: 1020ms; }
+  .home-page .products-grid > .product-container:nth-child(19) { animation-delay: 1080ms; }
+  .home-page .products-grid > .product-container:nth-child(20) { animation-delay: 1140ms; }
+  .home-page .products-grid > .product-container:nth-child(21) { animation-delay: 1200ms; }
+  .home-page .products-grid > .product-container:nth-child(22) { animation-delay: 1260ms; }
+
+  .home-page .product-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .home-page .add-to-cart-button {
+    transition: background-color 200ms ease;
+  }
+
+  .home-page .add-to-cart-button:hover {
+    background-color: rgb(25, 135, 84);
+  }
+}
