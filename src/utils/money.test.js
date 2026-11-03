@@ -2,19 +2,19 @@ import { describe, expect, it } from "vitest";
 import { formatMoney } from "./money";
 
 describe("formatMoney", () => {
-  it("format 1999 cents as $19.99", () => {
-    expect(formatMoney(1999)).toBe("$19.99");
+  it("formats cents as rounded Indian rupees", () => {
+    expect(formatMoney(1999)).toBe("₹20");
   });
 
-  it("display 2 decimals", () => {
-    expect(formatMoney(1090)).toBe("$10.90");
-    expect(formatMoney(100)).toBe("$1.00");
+  it("divides cents by 100 and rounds to whole rupees", () => {
+    expect(formatMoney(1090)).toBe("₹11");
+    expect(formatMoney(100)).toBe("₹1");
   });
-  it("format 0 cents as $0.00", () => {
-    expect(formatMoney(0)).toBe("$0.00");
+  it("formats 0 cents as zero rupees", () => {
+    expect(formatMoney(0)).toBe("₹0");
   });
-  it("work with negative numbers", () => {
-    expect(formatMoney(-999)).toBe("-$9.99");
-    expect(formatMoney(-100)).toBe("-$1.00");
+  it("formats negative amounts as Indian rupees", () => {
+    expect(formatMoney(-999)).toBe("-₹10");
+    expect(formatMoney(-100)).toBe("-₹1");
   });
 });

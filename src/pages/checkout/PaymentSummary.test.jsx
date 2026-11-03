@@ -41,7 +41,7 @@ describe('PaymentSummary component', () => {
     // 1. within() + getByText() + toBeInTheDocument()
     expect(
       within(screen.getByTestId('payment-summary-product-cost'))
-        .getByText('$42.75')
+        .getByText('₹43')
     ).toBeInTheDocument();
 
     // 2. getByTestId() + toHaveTextContent()
@@ -49,19 +49,19 @@ describe('PaymentSummary component', () => {
     // This solution is a little cleaner in this case.
     expect(
       screen.getByTestId('payment-summary-shipping-cost')
-    ).toHaveTextContent('$4.99');
+    ).toHaveTextContent('₹5');
 
     expect(
       screen.getByTestId('payment-summary-total-before-tax')
-    ).toHaveTextContent('$47.74');
+    ).toHaveTextContent('₹48');
 
     expect(
       screen.getByTestId('payment-summary-tax')
-    ).toHaveTextContent('$4.77');
+    ).toHaveTextContent('₹5');
 
     expect(
       screen.getByTestId('payment-summary-total')
-    ).toHaveTextContent('$52.51');
+    ).toHaveTextContent('₹53');
   });
    it('places an order', async () => {
     function Location() {

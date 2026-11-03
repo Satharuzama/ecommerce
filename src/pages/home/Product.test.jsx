@@ -30,17 +30,27 @@ describe("Product component", () => {
       screen.getByText("Black and Gray Athletic Cotton Socks - 6 Pairs"),
     ).toBeInTheDocument();
 
-    expect(screen.getByText("$10.90")).toBeInTheDocument();
+    expect(screen.getByText("₹11")).toBeInTheDocument();
 
     expect(screen.getByTestId("product-image")).toHaveAttribute(
       "src",
-      "images/products/athletic-cotton-socks-6-pairs.jpg",
+      "/images/products/athletic-cotton-socks-6-pairs.jpg",
     );
 
     expect(screen.getByTestId("product-rating-stars")).toHaveAttribute(
       "src",
-      "images/ratings/rating-45.png",
+      "/images/ratings/rating-45.png",
     );
+    expect(screen.getByText("87")).toBeInTheDocument();
+  });
+  it("draws stars for ratings without a matching image", () => {
+    product.rating.stars = 4.3;
+    render(<Product product={product} loadCart={loadCart} />);
+
+    const stars = screen.getByTestId("product-rating-stars");
+    expect(stars.tagName.toLowerCase()).toBe("svg");
+    expect(stars).toHaveAttribute("aria-label", "4.3 out of 5 stars");
+    expect(stars.querySelectorAll("polygon")).toHaveLength(5);
     expect(screen.getByText("87")).toBeInTheDocument();
   });
   it("adds product to the cart", async () => {

@@ -1,8 +1,8 @@
-export function formatMoney(amountCents){
-    if(amountCents < 0){
-        amountCents = amountCents * -1;
-        return `-$${(amountCents / 100).toFixed(2)}`
-
-    }
-return `$${(amountCents / 100).toFixed(2)}`
+export function formatMoney(priceCents) {
+    const rupees = priceCents / 100;
+    return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+    }).format(rupees);
 }
